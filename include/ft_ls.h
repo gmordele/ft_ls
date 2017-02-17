@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 00:34:09 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/17 04:14:47 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/02/17 05:07:27 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,9 @@ typedef struct		s_stat_name
 }					t_stat_name;
 
 void		list_dir(char *dir, unsigned int options);
+void		free_arr(t_stat_name *arr, int len);
+t_stat_name	*make_arr(char *dir, int *len, off_t *max_size);
+int			sorted(unsigned int options);
+void		sort_arr(t_stat_name *arr, unsigned int options, off_t len);
 
 #endif

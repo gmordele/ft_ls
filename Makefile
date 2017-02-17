@@ -6,7 +6,7 @@
 #    By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/17 00:00:01 by gmordele          #+#    #+#              #
-#    Updated: 2017/02/17 05:09:16 by gmordele         ###   ########.fr        #
+#    Updated: 2017/02/17 06:06:24 by gmordele         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -47,7 +47,6 @@ clean		:
 
 fclean		:	clean
 	rm -f $(NAME)
-	make fclean -C $(DEST_LIB)
 
 re			:	fclean all
 

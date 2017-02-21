@@ -6,11 +6,10 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 05:06:11 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/17 06:01:37 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/02/22 00:39:41 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/stat.h>
 #include "ft_ls.h"
 
 static void	swap(t_stat_name *p1, t_stat_name *p2)
@@ -20,11 +19,6 @@ static void	swap(t_stat_name *p1, t_stat_name *p2)
 	tmp = *p1;
 	*p1 = *p2;
 	*p2 = tmp;
-}
-
-int		comp_size(t_stat_name p1, t_stat_name p2)
-{
-	return (p1.buf.st_size - p2.buf.st_size);
 }
 
 static void	quicksort(t_stat_name *arr, int left, int right, int (*func)())
@@ -53,9 +47,23 @@ int			sorted(unsigned int options)
 	return (options & LS_REV || options & LS_TIME);
 }
 
+static void	rev_arr(t_stat_name *arr, off_t len)
+{
+	int	i;
+	
+	i = 0;
+	while (i < len / 2)
+	{
+		swap(&arr[i], &arr[len - i - 1]);
+		++i;
+	}
+}
+
 void	sort_arr(t_stat_name *arr, unsigned int options, off_t len)
 {
 	if (options & LS_TIME)
-		quicksort(arr, 0, len - 1, comp_size);
+		quicksort(arr, 0, len - 1, comp_last_modif);
+	if (options & LS_REV)
+		rev_arr(arr, len);
 }
 

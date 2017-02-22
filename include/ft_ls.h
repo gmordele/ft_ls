@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 00:34:09 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/22 00:30:13 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/02/22 21:39:55 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ int			sorted(unsigned int options);
 void		sort_arr(t_stat_name *arr, unsigned int options, off_t len);
 int			comp_size(t_stat_name p1, t_stat_name p2);
 int			comp_last_modif(t_stat_name p1, t_stat_name p2);
+void		print_arr(t_stat_name *arr, unsigned int options, int len);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 01:00:34 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/17 05:06:55 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/02/22 21:37:39 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,6 @@
 #include "ft_ls.h"
 #include "libft.h"
 #include <stdio.h>
-
-void		print_arr(t_stat_name *arr, unsigned int options, int len)
-{
-	int i;
-
-	i = 0;
-	while (i < len)
-		printf("%s\n", arr[i++].name);
-	(void)options;
-}
 
 void		list_dir(char *dir, unsigned int options)
 {

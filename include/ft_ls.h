@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 00:34:09 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/23 03:15:26 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/02/23 03:59:09 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,13 @@ int			comp_size(t_stat_name p1, t_stat_name p2);
 int			comp_last_modif(t_stat_name p1, t_stat_name p2);
 void		print_arr(t_stat_name *arr, unsigned int options, int len);
 int			comp_name(t_stat_name p1, t_stat_name p2);
+void		print_col_dir(t_stat_name name);
+void		print_col_link(t_stat_name name);
+void		print_col_sock(t_stat_name name);
+void		print_col_fifo(t_stat_name name);
+void		print_col_char_spec(t_stat_name name);
+void		print_col_block_char(t_stat_name name);
+void		print_col_exe(t_stat_name name);
+
 
 #endif

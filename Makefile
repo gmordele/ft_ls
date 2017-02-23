@@ -6,7 +6,7 @@
 #    By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/17 00:00:01 by gmordele          #+#    #+#              #
-#    Updated: 2017/02/22 21:53:07 by gmordele         ###   ########.fr        #
+#    Updated: 2017/02/23 03:59:18 by gmordele         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -19,7 +19,7 @@ CFLAGS		=	-Wall -Werror -Wextra
 
 SRC			=	ft_ls.c				list_dir.c			make_arr.c		\
 				sort_arr.c			comp_func.c			print.c			\
-				
+				print_col1.c		print_col2.c
 
 OBJ			=	$(SRC:%.c=%.o)
 

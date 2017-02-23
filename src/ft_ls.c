@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 23:28:24 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/23 00:21:59 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/02/23 04:10:46 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static unsigned int	parse_options(int argc, char **argv, int *first_arg)
 			else
 			{
 				printf("ls: illegal option -- %c\n", c);
-				printf("usage : ls [-lRart] [file ...]\n");
+				printf("usage : ls [-lRartGF] [file ...]\n");
 				exit(EXIT_FAILURE);
 			}
 		}

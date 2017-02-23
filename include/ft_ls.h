@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 00:34:09 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/23 03:59:09 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/02/23 04:31:33 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@
 # define COL_WHI_BG	"\033[47m"
 
 #include <sys/stat.h>
+#include <stdlib.h>
 
 typedef struct		s_stat_name
 {
@@ -50,9 +51,15 @@ typedef struct		s_stat_name
 	struct stat	buf;
 }					t_stat_name;
 
+typedef struct		s_max
+{
+	off_t		size;
+	nlink_t		links;
+}					t_max;
+
 void		list_dir(char *dir, unsigned int options);
 void		free_arr(t_stat_name *arr, int len);
-t_stat_name	*make_arr(char *dir, int *len, off_t *max_size, unsigned options);
+t_stat_name	*make_arr(char *dir, int *len, t_max *max, unsigned options);
 int			sorted(unsigned int options);
 void		sort_arr(t_stat_name *arr, unsigned int options, off_t len);
 int			comp_size(t_stat_name p1, t_stat_name p2);

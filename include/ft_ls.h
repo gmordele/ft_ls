@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 00:34:09 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/23 01:09:38 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/02/23 03:15:26 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,26 @@
 # define LS_TIME	0x10
 # define LS_COLORS	0x20
 # define LS_TYPE	0x40
+
+# define COL_RES	"\033[0m"
+
+# define COL_BLA	"\033[30m"
+# define COL_RED	"\033[31m"
+# define COL_GRE	"\033[32m"
+# define COL_YEL	"\033[33m"
+# define COL_BLU	"\033[34m"
+# define COL_MAG	"\033[35m"
+# define COL_CYA	"\033[36m"
+# define COL_WHI	"\033[37m"
+
+# define COL_BLA_BG	"\033[40m"
+# define COL_RED_BG	"\033[41m"
+# define COL_GRE_BG	"\033[42m"
+# define COL_YEL_BG	"\033[43m"
+# define COL_BLU_BG	"\033[44m"
+# define COL_MAG_BG	"\033[45m"
+# define COL_CYA_BG	"\033[46m"
+# define COL_WHI_BG	"\033[47m"
 
 #include <sys/stat.h>
 
@@ -38,5 +58,6 @@ void		sort_arr(t_stat_name *arr, unsigned int options, off_t len);
 int			comp_size(t_stat_name p1, t_stat_name p2);
 int			comp_last_modif(t_stat_name p1, t_stat_name p2);
 void		print_arr(t_stat_name *arr, unsigned int options, int len);
+int			comp_name(t_stat_name p1, t_stat_name p2);
 
 #endif

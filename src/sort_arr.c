@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 05:06:11 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/22 00:39:41 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/02/23 03:16:11 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,6 @@ static void	quicksort(t_stat_name *arr, int left, int right, int (*func)())
 	quicksort(arr, last + 1, right, func);
 }
 
-int			sorted(unsigned int options)
-{
-	return (options & LS_REV || options & LS_TIME);
-}
-
 static void	rev_arr(t_stat_name *arr, off_t len)
 {
 	int	i;
@@ -59,10 +54,13 @@ static void	rev_arr(t_stat_name *arr, off_t len)
 	}
 }
 
+
 void	sort_arr(t_stat_name *arr, unsigned int options, off_t len)
 {
 	if (options & LS_TIME)
 		quicksort(arr, 0, len - 1, comp_last_modif);
+	else
+		quicksort(arr, 0, len - 1, comp_name);
 	if (options & LS_REV)
 		rev_arr(arr, len);
 }

@@ -6,7 +6,7 @@
 #    By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/17 00:00:01 by gmordele          #+#    #+#              #
-#    Updated: 2017/02/22 21:38:00 by gmordele         ###   ########.fr        #
+#    Updated: 2017/02/22 21:53:07 by gmordele         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -48,6 +48,7 @@ clean		:
 
 fclean		:	clean
 	rm -f $(NAME)
+	rm -f $(LIBFT)
 
 re			:	fclean all
 

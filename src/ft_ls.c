@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 23:28:24 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/17 01:44:33 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/02/23 00:21:59 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int			valid_option(int c)
 {
 	char *valid_options;
 
-	valid_options = "lRart";
+	valid_options = "lRartGF";
 	return (ft_strchr(valid_options, c) != NULL ? 1 : 0);
 }
 
@@ -35,8 +35,11 @@ static unsigned int	get_options(int c)
 		return (LS_REV);
 	else if (c == 't')
 		return (LS_TIME);
-	else
-		return (0);
+	else if (c == 'G')
+		return (LS_COLORS);
+	else if (c == 'F')
+		return (LS_TYPE);
+	return (0);
 }
 
 static unsigned int	parse_options(int argc, char **argv, int *first_arg)

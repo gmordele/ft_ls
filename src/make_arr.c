@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 04:55:02 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/17 05:03:30 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/02/23 01:10:38 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static t_stat_name			add_arr_entry(char *dir1, char *file)
 
 	ret.name = ft_strdup(file);
 	ret.full_name = add_dir(dir1, file);
-	stat(ret.full_name, &ret.buf);
+	lstat(ret.full_name, &ret.buf);
 	return (ret);
 }
 
@@ -72,7 +72,7 @@ void		free_arr(t_stat_name *arr, int len)
 	free(arr);
 }
 
-t_stat_name	*make_arr(char *dir, int *len, off_t *max_size)
+t_stat_name	*make_arr(char *dir, int *len, off_t *max_size, unsigned options)
 {
 	DIR				*dirp;
 	struct dirent	*direntp;
@@ -86,10 +86,13 @@ t_stat_name	*make_arr(char *dir, int *len, off_t *max_size)
 	dirp = opendir(dir);
 	while ((direntp = (readdir(dirp))) != NULL)
 	{
-		arr[*len] = add_arr_entry(dir, direntp->d_name);
-		*max_size = *max_size > arr[*len].buf.st_size ?
-			*max_size : arr[*len].buf.st_size;
-		(*len)++;
+		if ((direntp->d_name)[0] != '.' || options & LS_ALL)
+		{
+			arr[*len] = add_arr_entry(dir, direntp->d_name);
+			*max_size = *max_size > arr[*len].buf.st_size ?
+				*max_size : arr[*len].buf.st_size;
+			(*len)++;
+		}
 	}
 	closedir(dirp);
 	return (arr);

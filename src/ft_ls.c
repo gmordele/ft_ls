@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 23:28:24 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/23 04:10:46 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/02/25 07:07:35 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,15 +71,13 @@ int 				main(int argc, char *argv[])
 {
 	unsigned int	options;
 	int				first_arg;
+	int n;
+	t_max max;
 
 	options = parse_options(argc, argv, &first_arg);
 	if (first_arg  == argc)
 		list_dir(".", options);
 	else
-	{
-		argc -= first_arg;
-		while (argc-- > 0)
-			list_dir(argv[first_arg++], options);
-	}
+		list_dir_arg(argc, argv);
 	exit(EXIT_SUCCESS);
 }

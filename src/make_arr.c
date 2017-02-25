@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 04:55:02 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/23 04:32:51 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/02/25 06:37:36 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,8 @@ t_stat_name	*make_arr(char *dir, int *len, t_max *max, unsigned options)
 	max->size = 0;
 	max->links = 0;
 	n_files = count_files(dir);
-	arr = (t_stat_name *)malloc(sizeof(t_stat_name) * (n_files + 1));
+//	arr = (t_stat_name *)malloc(sizeof(t_stat_name) * (n_files + 1));
+	arr = (t_stat_name *)malloc(sizeof(t_stat_name) * n_files);
 	*len = 0;
 	dirp = opendir(dir);
 	while ((direntp = (readdir(dirp))) != NULL)

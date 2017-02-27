@@ -6,7 +6,7 @@
 #    By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/17 00:00:01 by gmordele          #+#    #+#              #
-#    Updated: 2017/02/25 06:09:08 by gmordele         ###   ########.fr        #
+#    Updated: 2017/02/27 04:30:26 by gmordele         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -20,6 +20,7 @@ CFLAGS		=	-Wall -Werror -Wextra
 SRC			=	ft_ls.c				list_dir.c			make_arr.c		\
 				sort_arr.c			comp_func.c			print.c			\
 				print_col1.c		print_col2.c		make_arr_arg.c	\
+				list_dir_arg.c
 
 OBJ			=	$(SRC:%.c=%.o)
 
@@ -29,7 +30,7 @@ DEST_INC	=	./include/
 
 DEST_LIB	=	libft/
 
-LIBFT		=	$(DEST_LIB)/libft.a
+LIBFT		=	$(DEST_LIB)libft.a
 
 all 		:	$(NAME)
 

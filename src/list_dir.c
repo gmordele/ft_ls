@@ -6,18 +6,16 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 01:00:34 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/25 05:50:01 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/02/27 03:08:31 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <dirent.h>
 #include <string.h>
 #include <errno.h>
-#include <stdlib.h>
-#include <sys/stat.h>
 #include "ft_ls.h"
 #include "libft.h"
-#include <stdio.h>
+#include <printf.h>
 
 static void	list_dir_rec(t_stat_name *arr, int len, unsigned int options)
 {

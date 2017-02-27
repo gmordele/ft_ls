@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 00:34:09 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/25 07:03:08 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/02/27 02:56:05 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ void		print_col_char_spec(t_stat_name name);
 void		print_col_block_char(t_stat_name name);
 void		print_col_exe(t_stat_name name);
 t_stat_name	*make_arr_arg(char *argv[], int len, t_max *max, int *n);
+void		list_dir_arg(int argc, char *argv[], unsigned int options);
 
 #endif

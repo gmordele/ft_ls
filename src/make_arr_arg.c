@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/25 06:08:42 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/25 07:05:26 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/02/27 03:05:36 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ t_stat_name			*make_arr_arg(char *argv[], int len, t_max *max, int *n)
 	max->size = 0;
 	max->links = 0;
 	arr = (t_stat_name *)malloc(sizeof(t_stat_name) * len);
-	i = 0;
+	i = 1;
 	*n = 0;
 	while (i < len)
 	{
@@ -63,6 +63,5 @@ t_stat_name			*make_arr_arg(char *argv[], int len, t_max *max, int *n)
 		}
 		++i;
 	}
-	
 	return (arr);
 }

@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 00:34:09 by gmordele          #+#    #+#             */
-/*   Updated: 2017/03/20 16:14:08 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/03/20 23:23:36 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ typedef struct		s_dir_info
 {
 	off_t		max_size;
 	nlink_t		max_links;
+	int			mx_ln_us;
+	int			mx_ln_gr;
 	blkcnt_t	total;
 }					t_dir_info;
 

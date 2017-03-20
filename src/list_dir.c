@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 01:00:34 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/27 03:08:31 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/03/20 01:53:30 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,13 @@ void		list_dir(char *dir, unsigned int options)
 	DIR 		*dirp;
 	t_stat_name	*arr;
 	int			len;
-	t_max		max;
 
 	if ((dirp = opendir(dir)) == NULL)
 	{
 		printf("ft_ls: %s: %s\n", dir, strerror(errno));
 		return ;
 	}
-	arr = make_arr(dir, &len, &max, options);
+	arr = make_arr(dir, &len, options);
 	sort_arr(arr, options, len);
 	print_arr(arr, options, len);
 	closedir(dirp);

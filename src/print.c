@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/22 21:37:24 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/27 04:31:13 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/03/20 02:14:53 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 #include <fcntl.h>
 #include "libft.h"
 #include "ft_ls.h"
-
-static void	print_list(t_stat_name *arr, unsigned int options, int len)
-{
-	(void)arr;
-	(void)options;
-	(void)len;
-}
 
 static void	print_colored_name(t_stat_name name)
 {
@@ -46,7 +39,6 @@ static void	print_colored_name(t_stat_name name)
 	}
 	else
 		ft_putstr(name.name);
-
 }
 
 void		print_type(t_stat_name name)

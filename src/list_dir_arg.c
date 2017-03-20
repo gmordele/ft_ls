@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/25 07:07:45 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/27 04:28:55 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/03/20 01:53:52 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,10 @@ void		list_dir_arg(int argc, char *argv[], unsigned int options)
 {
 	int			len;
 	t_stat_name	*arr;
-	t_max		max;
 
 	if (argc == 2)
 	{
-		arr = make_arr_arg(argv, argc, &max, &len);
+		arr = make_arr_arg(argv, argc, &len);
 		if ((arr[0].buf.st_mode & S_IFMT) == S_IFDIR)
 			list_dir(arr[0].name, options);
 		else
@@ -69,7 +68,7 @@ void		list_dir_arg(int argc, char *argv[], unsigned int options)
 	}
 	else
 	{
-		arr = make_arr_arg(argv, argc, &max, &len);
+		arr = make_arr_arg(argv, argc, &len);
 		sort_arr(arr, options, len);
 		print_list_arg(arr, len, options);
 		free_arr(arr, len);

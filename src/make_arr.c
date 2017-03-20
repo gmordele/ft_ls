@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 04:55:02 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/25 06:37:36 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/03/20 01:57:39 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,17 +72,14 @@ void		free_arr(t_stat_name *arr, int len)
 	free(arr);
 }
 
-t_stat_name	*make_arr(char *dir, int *len, t_max *max, unsigned options)
+t_stat_name	*make_arr(char *dir, int *len, unsigned options)
 {
 	DIR				*dirp;
 	struct dirent	*direntp;
 	int				n_files;
 	t_stat_name		*arr;
 
-	max->size = 0;
-	max->links = 0;
 	n_files = count_files(dir);
-//	arr = (t_stat_name *)malloc(sizeof(t_stat_name) * (n_files + 1));
 	arr = (t_stat_name *)malloc(sizeof(t_stat_name) * n_files);
 	*len = 0;
 	dirp = opendir(dir);
@@ -91,10 +88,6 @@ t_stat_name	*make_arr(char *dir, int *len, t_max *max, unsigned options)
 		if ((direntp->d_name)[0] != '.' || options & LS_ALL)
 		{
 			arr[*len] = add_arr_entry(dir, direntp->d_name);
-			max->size = max->size > arr[*len].buf.st_size ?
-				max->size : arr[*len].buf.st_size;
-			max->links = max->links > arr[*len].buf.st_nlink ?
-				max->links : arr[*len].buf.st_nlink;
 			(*len)++;
 		}
 	}

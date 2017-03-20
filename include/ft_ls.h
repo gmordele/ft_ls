@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 00:34:09 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/27 02:56:05 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/03/20 16:14:08 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,16 @@ typedef struct		s_stat_name
 	struct stat	buf;
 }					t_stat_name;
 
-typedef struct		s_max
+typedef struct		s_dir_info
 {
-	off_t		size;
-	nlink_t		links;
-}					t_max;
+	off_t		max_size;
+	nlink_t		max_links;
+	blkcnt_t	total;
+}					t_dir_info;
 
 void		list_dir(char *dir, unsigned int options);
 void		free_arr(t_stat_name *arr, int len);
-t_stat_name	*make_arr(char *dir, int *len, t_max *max, unsigned options);
+t_stat_name	*make_arr(char *dir, int *len, unsigned options);
 int			sorted(unsigned int options);
 void		sort_arr(t_stat_name *arr, unsigned int options, off_t len);
 int			comp_size(t_stat_name p1, t_stat_name p2);
@@ -73,7 +74,9 @@ void		print_col_fifo(t_stat_name name);
 void		print_col_char_spec(t_stat_name name);
 void		print_col_block_char(t_stat_name name);
 void		print_col_exe(t_stat_name name);
-t_stat_name	*make_arr_arg(char *argv[], int len, t_max *max, int *n);
+t_stat_name	*make_arr_arg(char *argv[], int len, int *n);
 void		list_dir_arg(int argc, char *argv[], unsigned int options);
+void		print_list(t_stat_name *arr, unsigned int options, int len);
+void		get_perm(char *perm, t_stat_name entry);
 
 #endif

@@ -6,11 +6,10 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 23:28:24 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/27 04:15:28 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/03/21 16:21:44 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 #include "libft.h"
 #include "ft_ls.h"
@@ -57,8 +56,8 @@ static unsigned int	parse_options(int argc, char **argv, int *first_arg)
 				options |= get_options(c);
 			else
 			{
-				printf("ls: illegal option -- %c\n", c);
-				printf("usage : ls [-lRartGF] [file ...]\n");
+				ft_printf("ls: illegal option -- %c\n", c);
+				ft_printf("usage : ls [-lRartGF] [file ...]\n");
 				exit(EXIT_FAILURE);
 			}
 		}

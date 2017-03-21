@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 00:34:09 by gmordele          #+#    #+#             */
-/*   Updated: 2017/03/21 14:32:12 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/03/21 17:37:09 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ int			sorted(unsigned int options);
 void		sort_arr(t_stat_name *arr, unsigned int options, off_t len);
 int			comp_size(t_stat_name p1, t_stat_name p2);
 int			comp_last_modif(t_stat_name p1, t_stat_name p2);
-void		print_arr(t_stat_name *arr, unsigned int options, int len);
+void		print_arr(t_stat_name *arr, unsigned int options, int len,
+					int total);
 int			comp_name(t_stat_name p1, t_stat_name p2);
 void		print_col_dir(t_stat_name name);
 void		print_col_link(t_stat_name name);
@@ -80,7 +81,8 @@ void		print_col_block_char(t_stat_name name);
 void		print_col_exe(t_stat_name name);
 t_stat_name	*make_arr_arg(char *argv[], int len, int *n);
 void		list_dir_arg(int argc, char *argv[], unsigned int options);
-void		print_list(t_stat_name *arr, unsigned int options, int len);
+void		print_list(t_stat_name *arr, unsigned int options, int len,
+					 int total);
 void		get_perm(char *perm, t_stat_name entry);
 t_dir_info	get_dir_info(t_stat_name *arr, int len);
 char		*get_group(t_stat_name entry);

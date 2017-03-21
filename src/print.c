@@ -6,11 +6,10 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/22 21:37:24 by gmordele          #+#    #+#             */
-/*   Updated: 2017/03/21 16:01:58 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/03/21 17:34:52 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <fcntl.h>
 #include "libft.h"
 #include "ft_ls.h"
@@ -84,10 +83,10 @@ static void	print_default(t_stat_name *arr, unsigned int options, int len)
 	}
 }
 
-void		print_arr(t_stat_name *arr, unsigned int options, int len)
+void		print_arr(t_stat_name *arr, unsigned int options, int len, int total)
 {
 	if (options & LS_LIST)
-		print_list(arr, options, len);
+		print_list(arr, options, len, total);
 	else
 		print_default(arr, options, len);
 }

@@ -6,7 +6,7 @@
 #    By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/17 00:00:01 by gmordele          #+#    #+#              #
-#    Updated: 2017/03/21 13:00:32 by gmordele         ###   ########.fr        #
+#    Updated: 2017/03/21 17:00:43 by gmordele         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -21,7 +21,7 @@ SRC			=	ft_ls.c				list_dir.c			make_arr.c		\
 				sort_arr.c			comp_func.c			print.c			\
 				print_col1.c		print_col2.c		make_arr_arg.c	\
 				list_dir_arg.c		print_l_option.c	perm.c			\
-				dir_info.c
+				dir_info.c			get_name_group.c
 
 OBJ			=	$(SRC:%.c=%.o)
 

@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 18:32:05 by gmordele          #+#    #+#             */
-/*   Updated: 2017/02/11 13:39:33 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/03/21 16:10:13 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,5 +114,6 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_putnbr_base_fd(int n, int base, int fd);
 void				ft_putnbr_base(int n, int base);
 int					get_next_line(const int fd, char **line);
+int					ft_printf(const char *format, ...);
 
 #endif

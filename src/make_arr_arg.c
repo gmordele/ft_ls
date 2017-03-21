@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/25 06:08:42 by gmordele          #+#    #+#             */
-/*   Updated: 2017/03/20 01:58:48 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/03/21 16:22:55 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <errno.h>
 #include "libft.h"
 #include "ft_ls.h"
-#include <stdio.h>
 
 static int			valid_file(char *file)
 {
@@ -25,7 +24,7 @@ static int			valid_file(char *file)
 		return (1);
 	else
 	{
-		printf("ft_ls: %s: %s\n", file, strerror(errno));
+		ft_printf("ft_ls: %s: %s\n", file, strerror(errno));
 		return (0);
 	}
 }

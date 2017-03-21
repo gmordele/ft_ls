@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 01:00:34 by gmordele          #+#    #+#             */
-/*   Updated: 2017/03/20 01:53:30 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/03/21 17:35:17 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void		list_dir(char *dir, unsigned int options)
 	}
 	arr = make_arr(dir, &len, options);
 	sort_arr(arr, options, len);
-	print_arr(arr, options, len);
+	print_arr(arr, options, len, 1);
 	closedir(dirp);
 	if (options & LS_REC)
 		list_dir_rec(arr, len, options);

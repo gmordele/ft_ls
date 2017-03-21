@@ -6,14 +6,13 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 12:58:13 by gmordele          #+#    #+#             */
-/*   Updated: 2017/03/21 15:50:58 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/03/21 16:22:31 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_ls.h"
 #include <sys/types.h>
-#include <stdio.h>
 
 static int			num_len(unsigned int n)
 {
@@ -29,16 +28,6 @@ static int			num_len(unsigned int n)
 	}
 	return (len);
 }
-
-/*
-static int			size_len(t_stat_name entry)
-{
-	if ((entry.buf.st_mode & S_IFMT) != S_IFCHR)
-		return (num_len(entry.buf.st_size));
-	return (4 + num_len(major(entry.buf.st_rdev))
-			+ num_len(minor(entry.buf.st_rdev)));
-}
-*/
 
 static t_dir_info	init_dir_info()
 {

@@ -6,12 +6,12 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/25 07:07:45 by gmordele          #+#    #+#             */
-/*   Updated: 2017/03/20 01:53:52 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/03/21 17:34:38 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
-#include <stdio.h>
+#include "libft.h"
 
 static void	print_reg_arg(t_stat_name *arr, int len, unsigned int options,
 						int *first_dir)
@@ -23,12 +23,11 @@ static void	print_reg_arg(t_stat_name *arr, int len, unsigned int options,
 	{
 		if ((arr[i].buf.st_mode & S_IFMT) != S_IFDIR)
 		{
-			print_arr(arr + i, options, 1);
+			print_arr(arr + i, options, 1, 0);
 			*first_dir = 1;
 		}
 		++i;
 	}
-	i = 0;
 }
 
 static void	print_list_arg(t_stat_name *arr, int len, unsigned int options)
@@ -44,9 +43,9 @@ static void	print_list_arg(t_stat_name *arr, int len, unsigned int options)
 		if ((arr[i].buf.st_mode & S_IFMT) == S_IFDIR)
 		{
 			if (first_dir == 1)
-				printf("\n");
+				ft_printf("\n");
 			first_dir = 1;
-			printf("%s:\n", arr[i].name);
+			ft_printf("%s:\n", arr[i].name);
 			list_dir(arr[i].name, options);
 		}
 		++i;
@@ -64,7 +63,9 @@ void		list_dir_arg(int argc, char *argv[], unsigned int options)
 		if ((arr[0].buf.st_mode & S_IFMT) == S_IFDIR)
 			list_dir(arr[0].name, options);
 		else
-			print_arr(arr, options, 1);
+		{
+			print_arr(arr, options, 1, 1);
+		}
 	}
 	else
 	{

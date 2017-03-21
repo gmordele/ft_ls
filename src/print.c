@@ -6,7 +6,7 @@
 /*   By: gmordele <gmordele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/22 21:37:24 by gmordele          #+#    #+#             */
-/*   Updated: 2017/03/20 02:14:53 by gmordele         ###   ########.fr       */
+/*   Updated: 2017/03/21 16:01:58 by gmordele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	print_colored_name(t_stat_name name)
 		ft_putstr(name.name);
 }
 
-void		print_type(t_stat_name name)
+static void	print_type(t_stat_name name)
 {
 	if ((name.buf.st_mode & S_IFMT) == S_IFDIR)
 		ft_putchar('/');
@@ -61,29 +61,27 @@ void		print_type(t_stat_name name)
 	}
 }
 
+void		print_name(t_stat_name entry, unsigned options)
+{
+	if (options & LS_COLORS)
+			print_colored_name(entry);
+	else
+			ft_putstr(entry.name);
+	if (options & LS_TYPE)
+		print_type(entry);
+}
+
 static void	print_default(t_stat_name *arr, unsigned int options, int len)
 {
 	int		i;
 
 	i = 0;
-	if (options & LS_COLORS)
-		while (i < len)
-		{
-			print_colored_name(arr[i]);
-			if (options & LS_TYPE)
-				print_type(arr[i]);
-			ft_putchar('\n');
-			++i;
-		}
-	else
-		while (i < len)
-		{
-			ft_putstr(arr[i].name);
-			if (options & LS_TYPE)
-				print_type(arr[i]);
-			ft_putchar('\n');
-			++i;
-		}
+	while (i < len)
+	{
+		print_name(arr[i], options);
+		ft_putchar('\n');
+		++i;
+	}
 }
 
 void		print_arr(t_stat_name *arr, unsigned int options, int len)
